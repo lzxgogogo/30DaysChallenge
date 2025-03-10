@@ -1,0 +1,24 @@
+# 编译生成文件
+build/
+*.o
+*.a
+*.so
+*.out
+*.exe
+
+# IDE配置
+.vscode/
+.idea/
+
+# 本地临时文件
+*.swp
+*.swo
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 其他大文件
+*.zip
+*.tar.gz
