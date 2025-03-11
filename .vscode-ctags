@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+_GNU_SOURCE	Day1_coroutine/ucontext.c	/^#define _GNU_SOURCE$/;"	d	file:
+count	Day1_coroutine/ucontext.c	/^int count = 0;$/;"	v	typeref:typename:int
+ctx	Day1_coroutine/ucontext.c	/^ucontext_t ctx[3];$/;"	v	typeref:typename:ucontext_t[3]
+env	Day1_coroutine/setjmp.c	/^jmp_buf env;$/;"	v	typeref:typename:jmp_buf
+func	Day1_coroutine/setjmp.c	/^void func(int arg){$/;"	f	typeref:typename:void
+func1	Day1_coroutine/ucontext.c	/^void func1(void){$/;"	f	typeref:typename:void
+func2	Day1_coroutine/ucontext.c	/^void func2(void){$/;"	f	typeref:typename:void
+func3	Day1_coroutine/ucontext.c	/^void func3(void){$/;"	f	typeref:typename:void
+init_hook	Day1_coroutine/ucontext.c	/^void init_hook(void)$/;"	f	typeref:typename:void
+main	Day1_coroutine/setjmp.c	/^int main(){$/;"	f	typeref:typename:int
+main	Day1_coroutine/ucontext.c	/^int main(){$/;"	f	typeref:typename:int
+main_ctx	Day1_coroutine/ucontext.c	/^ucontext_t main_ctx;$/;"	v	typeref:typename:ucontext_t
+read	Day1_coroutine/ucontext.c	/^ssize_t read(int fd, void *buf, size_t count){$/;"	f	typeref:typename:ssize_t
+read_f	Day1_coroutine/ucontext.c	/^read_t read_f = NULL;$/;"	v	typeref:typename:read_t
+read_t	Day1_coroutine/ucontext.c	/^typedef ssize_t (*read_t)(int fd, void *buf, size_t count);$/;"	t	typeref:typename:ssize_t (*)(int fd,void * buf,size_t count)	file:
+write	Day1_coroutine/ucontext.c	/^ssize_t write(int fd, const void *buf, size_t count){$/;"	f	typeref:typename:ssize_t
+write_f	Day1_coroutine/ucontext.c	/^write_t write_f = NULL;$/;"	v	typeref:typename:write_t
+write_t	Day1_coroutine/ucontext.c	/^typedef ssize_t (* write_t)(int fd, const void *buf, size_t count);$/;"	t	typeref:typename:ssize_t (*)(int fd,const void * buf,size_t count)	file:
