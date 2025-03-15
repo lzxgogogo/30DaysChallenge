@@ -8,26 +8,7 @@
 #include <sys/select.h>
 #include <sys/poll.h>
 #include <sys/epoll.h>
-void *client_thread(void *arg)
-{
-    int clientfd = *(int *)arg;
-    while (1)
-    {
-        char buffer[1024] = {0};
-        int count = recv(clientfd, buffer, 1024, 0);
-        if (count == 0)
-        { // disconnect
-            printf("client connect");
-            close(clientfd);
-            break;
-        }
 
-        printf("REV: %s\n", buffer);
-
-        count = send(clientfd, buffer, 1024, 0);
-        printf("send: %d\n", count);
-    }
-}
 int main()
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
