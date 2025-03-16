@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <sys/epoll.h>
 
-#define BUFFER_LENGTH 1024
+#define BUFFER_LENGTH 10
 #define CONNECTION_SIZE 1024
 
 typedef int (*RCALLBACK)(int fd);
@@ -86,8 +86,8 @@ int accept_cb(int fd){
     conn_list[clientfd].send_callback = send_cb;
     memset(conn_list[clientfd].rbuffer, 0, BUFFER_LENGTH);
     memset(conn_list[clientfd].wbuffer, 0, BUFFER_LENGTH);
-    conn_list->rlength = 0;
-    conn_list->wlength = 0;
+    conn_list[clientfd].rlength = 0;
+    conn_list[clientfd].wlength = 0;
 
     set_event(clientfd, EPOLLIN, 1);
 
@@ -118,6 +118,8 @@ int main()
 {
     unsigned short port = 2000;
     int sockfd = init_server(port);
+
+
     epfd = epoll_create(1);
     if(epfd < 0){
         printf("epoll create failed: %d\n", epfd);
@@ -126,6 +128,7 @@ int main()
     conn_list[sockfd].r_action.accept_callback = accept_cb;
     conn_list[sockfd].is_sockfd = 1;
     set_event(sockfd, EPOLLIN, 1);
+
 
     int timeouts = -1;//-1表示没有事件就绪时epoll无限阻塞，后面添加定时器和定时器事件
     while(1) {
