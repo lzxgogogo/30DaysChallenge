@@ -111,6 +111,7 @@ add_event(reactor_t * R, int events, event_t *e){
 int del_event(reactor_t * R, event_t *e){
     epoll_ctl(R->epfd, EPOLL_CTL_DEL, e->fd, NULL);
     free_event(e);
+    e->fd = -1;
     return 0;
 }
 
